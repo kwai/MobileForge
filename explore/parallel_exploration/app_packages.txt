@@ -1,0 +1,19 @@
+# 应用包名列表文件
+# 每行一个包名，以#开头的行为注释
+
+# 系统应用
+com.android.camera2
+com.android.settings
+com.google.android.deskclock
+com.google.android.contacts
+
+# 第三方应用
+com.arduia.expense
+net.gsantner.markor
+net.osmand
+com.simplemobiletools.calendar.pro
+com.simplemobiletools.smsmessenger
+
+# 可以添加更多应用
+# com.example.otherapp
+# org.example.anotherapp

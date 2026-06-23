@@ -1,0 +1,51 @@
+# ============================================
+# MobileForge Rollout 依赖库
+# ============================================
+
+# 核心工具库
+pyyaml
+python-dotenv
+requests
+tenacity
+termcolor
+
+# 数据处理
+numpy==1.26.3
+pandas==2.1.4
+openpyxl
+
+# 图像处理与OCR
+opencv-python
+paddlepaddle
+paddleocr>=2.0.1
+matplotlib==3.6.1
+
+# AI/LLM 相关
+openai
+google-generativeai
+faiss-cpu
+
+# ============================================
+# AndroidWorld 依赖库
+# ============================================
+
+# Android 环境
+android_env==1.2.3
+dm_env==1.6
+grpcio-tools==1.71.0
+protobuf==5.29.5
+
+# AndroidWorld 核心
+absl-py==2.1.0
+immutabledict==2.0.0
+jsonschema==4.17.3
+fuzzywuzzy==0.18.0
+python-Levenshtein
+pysqlite3-binary
+
+# 音视频处理
+pydub
+
+# 开发工具
+IPython
+pytest

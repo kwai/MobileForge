@@ -1,0 +1,35 @@
+# 多设备并行探索配置文件示例
+# 复制此文件为 parallel_config.yaml 并根据您的环境修改配置
+
+# 设备配置
+device_config:
+  num_devices: 2  # 使用的设备数量
+  use_emulator: true  # 是否使用模拟器
+
+  # 模拟器配置（仅在use_emulator为true时需要）
+  emulator_exe: "/path/to/android-sdk/emulator/emulator"  # 修改为您的emulator路径
+  source_avd_name: "AndroidWorldAvd"  # 源AVD名称
+  source_avd_home: "/path/to/avd/home"  # 源AVD主目录
+  target_avd_home: "/path/to/avd/home"  # 目标AVD主目录（可与源相同）
+  android_sdk_path: "/path/to/android-sdk"  # Android SDK路径
+
+# 探索配置
+exploration_config:
+  max_branching_factor: 3  # 每个节点最大探索任务数
+  max_exploration_steps: 30  # 每个任务最大探索步数
+  max_exploration_depth: 5  # 最大探索深度
+  output_dir: "./exploration_output_parallel"  # 输出目录
+
+# 应用列表配置
+app_config:
+  use_default_list: true  # 是否使用默认应用列表
+  app_list_file: "app_packages.txt"  # 自定义应用列表文件（如果不使用默认列表）
+
+# 知识提取配置
+knowledge_config:
+  skip_extraction: false  # 是否跳过知识提取
+
+# 其他配置
+misc_config:
+  verbose: true  # 详细输出
+  log_file: "./parallel_exploration.log"  # 日志文件路径

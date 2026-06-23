@@ -1,0 +1,92 @@
+# MobileForge rollout configuration example.
+# Copy this file to config.yaml and fill local paths / model endpoints.
+
+NETWORK_MODE: "public"
+ENVIRONMENT_MODE: "local"
+RUN_MODE: "rollout"  # benchmark | rollout
+
+DATASET_PATH: "./data/generated_tasks_26020301-all.csv"
+SESSION_ID_SUFFIX: "mobileforge-demo"
+AGENT_NAME: "Qwen3VL"  # Qwen3VL | GUIOwl15 | UITARS | UITARS_1_5 | M3A | M3A_MultiTurn
+
+# OpenAI-compatible model endpoints. Use your own serving URL and API key.
+QWEN_BASE_URL: "https://your-openai-compatible-endpoint/v1"
+QWEN_API_KEY: "YOUR_API_KEY"
+QWEN_MODEL: "Qwen/Qwen3-VL-8B-Instruct"
+QWEN_MAX_PIXELS: 1003520
+
+GUIOWL_LAST_IMAGE: 5
+
+UITARS_BASE_URL: "https://your-openai-compatible-endpoint/v1"
+UITARS_API_KEY: "YOUR_API_KEY"
+UITARS_MODEL: "ui-tars"
+UITARS_HISTORY_N: 1
+
+M3A_BASE_URL: "https://your-openai-compatible-endpoint/v1"
+M3A_API_KEY: "YOUR_API_KEY"
+M3A_MODEL: "gemini-2.5-pro"
+
+# MobileGym-Critic evaluator.
+MOBILEGYM_CRITIC_STEP_DESC_MODEL: "your-step-description-model"
+MOBILEGYM_CRITIC_STEP_DESC_PROVIDER: "openai_compatible"
+MOBILEGYM_CRITIC_STEP_DESC_BASE_URL: "https://your-openai-compatible-endpoint/v1"
+MOBILEGYM_CRITIC_FINAL_DECISION_MODEL: "your-final-decision-model"
+MOBILEGYM_CRITIC_FINAL_DECISION_PROVIDER: "openai_compatible"
+MOBILEGYM_CRITIC_FINAL_DECISION_BASE_URL: "https://your-openai-compatible-endpoint/v1"
+MOBILEGYM_CRITIC_API_KEY: "YOUR_API_KEY"
+MOBILEGYM_CRITIC_MAX_RETRIES: 4
+
+_MODE_PRESETS:
+  network:
+    public:
+      _BASE_URL: "https://your-openai-compatible-endpoint/v1"
+      _NUM_OF_EMULATOR: 1
+      _MAX_EVAL_SUBPROCESS: 2
+  environment:
+    local:
+      _ADB_PATH: "adb"
+      _CONDA_PATH: "/path/to/miniconda3"
+      _EMULATOR_PATH: "/path/to/android-sdk/emulator/emulator"
+      _ANDROID_SDK_PATH: "/path/to/android-sdk"
+      _DEFAULT_KEYBOARD_PACKAGE: "com.google.android.inputmethod.latin/com.android.inputmethod.latin.LatinIME"
+      _SYS_AVD_HOME: "/path/to/avd"
+      _SOURCE_AVD_HOME: "/path/to/avd"
+  run:
+    benchmark:
+      _MAX_ATTEMPTS: 3
+      _RESULTS_DIR: "./results/benchmark"
+      _SESSION_PREFIX: "mobileforge-benchmark-"
+      _EARLY_STOP_ON_SUCCESS: true
+      _RESET_APP_DATA: false
+      _SELF_HINT_ENABLED: false
+    rollout:
+      _MAX_ATTEMPTS: 4
+      _RESULTS_DIR: "./results/rollout"
+      _SESSION_PREFIX: "mobileforge-rollout-"
+      _EARLY_STOP_ON_SUCCESS: false
+      _RESET_APP_DATA: true
+      _SELF_HINT_ENABLED: true
+
+AGENTS:
+  - NAME: "Qwen3VL"
+    REPO_PATH: "./framework/models/AndroidWorld"
+    ENV_NAME: "android_world"
+  - NAME: "GUIOwl15"
+    REPO_PATH: "./framework/models/AndroidWorld"
+    ENV_NAME: "android_world"
+  - NAME: "UITARS"
+    REPO_PATH: "./framework/models/AndroidWorld"
+    ENV_NAME: "android_world"
+  - NAME: "UITARS_1_5"
+    REPO_PATH: "./framework/models/AndroidWorld"
+    ENV_NAME: "android_world"
+  - NAME: "M3A"
+    REPO_PATH: "./framework/models/AndroidWorld"
+    ENV_NAME: "android_world"
+  - NAME: "M3A_MultiTurn"
+    REPO_PATH: "./framework/models/AndroidWorld"
+    ENV_NAME: "android_world"
+
+OPENAI_API_MODEL: ""
+MAX_ROUNDS: 0
+SOURCE_AVD_NAME: "AndroidWorldAvd"

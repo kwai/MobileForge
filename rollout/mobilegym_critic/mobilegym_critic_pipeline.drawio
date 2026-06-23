@@ -1,0 +1,153 @@
+<mxfile host="app.diagrams.net" modified="2024-07-31T08:30:00.000Z" agent="Gemini-Code-Assistant" etag="ABC12345" version="22.1.2" type="device">
+  <diagram name="MemGUI-Eval-Pipeline" id="diagram-1">
+    <mxGraphModel dx="2000" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" value="Start Evaluation" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="770" y="40" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="input_data" value="Input Data:&lt;br&gt;- log.json&lt;br&gt;- screenshots/*.png&lt;br&gt;- task_description.csv" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="745" y="160" width="170" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_start_to_input" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="start" target="input_data">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="process_visualize" value="&lt;b&gt;Stage 1: Visualize Actions&lt;/b&gt;&lt;br&gt;&lt;code&gt;visualize_and_save_actions()&lt;/code&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="720" y="290" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_input_to_visualize" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="input_data" target="process_visualize">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="visualize_outputs" value="Generated Artifacts" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="450" y="420" width="150" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_visualize_to_outputs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="process_visualize" target="visualize_outputs">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="830" y="480" />
+              <mxPoint x="600" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="output_single_actions" value="&lt;b&gt;single_actions/&lt;/b&gt;&lt;br&gt;Screenshots with click markers and raw action text." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="380" y="550" width="280" height="60" as="geometry" />
+        </mxCell>
+         <mxCell id="output_visualize_actions" value="&lt;b&gt;visualize_actions/&lt;/b&gt;&lt;br&gt;Side-by-side 'before' and 'after' action images." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="380" y="610" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="output_puzzle" value="&lt;b&gt;puzzle/puzzle.png&lt;/b&gt;&lt;br&gt;A grid of all single_actions images." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="380" y="670" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="process_preeval" value="&lt;b&gt;Stage 2: Pre-Evaluation (Fast Path)&lt;/b&gt;&lt;br&gt;&lt;code&gt;run_pre_evaluation()&lt;/code&gt;&lt;br&gt;&lt;br&gt;Uses VLM on the &lt;b&gt;last 3 screenshots&lt;/b&gt; to make a quick, conservative success check." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="720" y="420" width="220" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_visualize_to_preeval" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="process_visualize" target="process_preeval">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="decision_preeval" value="Pre-evaluation Decision?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="750" y="580" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_preeval_to_decision" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="process_preeval" target="decision_preeval">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="save_success" value="&lt;b&gt;Save Result&lt;/b&gt;&lt;br&gt;Evaluation Method: &lt;br&gt;&lt;i&gt;'pre_evaluation'&lt;/i&gt;&lt;br&gt;Decision: Success" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="595" width="180" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_decision_to_save" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="decision_preeval" target="save_success">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label_success" value="Success" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#2C783D;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="920" y="610" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="end_early" value="End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="600" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_save_to_end" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="save_success" target="end_early">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="process_detailed_desc" value="&lt;b&gt;Stage 3.1: Generate Step Descriptions&lt;/b&gt;&lt;br&gt;&lt;code&gt;_generate_description_for_step()&lt;/code&gt;&lt;br&gt;&lt;br&gt;Uses VLM on each step's 'before/after' image to generate detailed `action_description` and `ui_description`.&lt;br&gt;&lt;b&gt;(Runs in Parallel)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="695" y="780" width="270" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_decision_to_detailed" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="decision_preeval" target="process_detailed_desc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label_uncertain" value="Uncertain" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#B85450;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="830" y="710" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="process_final_decision_1" value="&lt;b&gt;Stage 3.2: Final Decision (Phase 1)&lt;/b&gt;&lt;br&gt;&lt;br&gt;LLM evaluates all step descriptions + last 3 screenshots." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="720" y="960" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_detailed_to_final1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="process_detailed_desc" target="process_final_decision_1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="decision_final" value="LLM Final Decision?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="750" y="1100" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_final1_to_decision" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="process_final_decision_1" target="decision_final">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="save_final" value="&lt;b&gt;Save Result&lt;/b&gt;&lt;br&gt;Evaluation Method: &lt;br&gt;&lt;i&gt;'detailed_evaluation'&lt;/i&gt;&lt;br&gt;Decision: Success or Failure" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="450" y="1115" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_decision_to_save_final" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="decision_final" target="save_final">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label_conclusive" value="Conclusive (Success/Failure)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#2C783D;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="580" y="1070" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="process_stitch_supplemental" value="&lt;b&gt;Stage 3.3: Gather Supplemental Images&lt;/b&gt;&lt;br&gt;&lt;br&gt;LLM requested more info. Stitch screenshots for the `required_steps`." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="700" y="1260" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_decision_to_supplemental" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="decision_final" target="process_stitch_supplemental">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label_uncertain_final" value="Uncertain (-1)&lt;br&gt;(&lt;i&gt;required_steps&lt;/i&gt; provided)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#B85450;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="830" y="1220" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="process_final_decision_2" value="&lt;b&gt;Stage 3.4: Final Decision (Phase 2)&lt;/b&gt;&lt;br&gt;&lt;br&gt;LLM evaluates again with the supplemental screenshots. &lt;b&gt;Must make a final decision.&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="700" y="1400" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_supplemental_to_final2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="process_stitch_supplemental" target="process_final_decision_2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="save_final_supplemental" value="&lt;b&gt;Save Result&lt;/b&gt;&lt;br&gt;Evaluation Method: &lt;br&gt;&lt;i&gt;'detailed_evaluation_with_screenshots'&lt;/i&gt;&lt;br&gt;Decision: Success or Failure" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="720" y="1540" width="220" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_final2_to_save" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="process_final_decision_2" target="save_final_supplemental">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="end_final" value="End" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="780" y="1800" width="100" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="final_outputs" value="Final Output Files" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="755" y="1690" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="output_csv" value="- results.csv" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="920" y="1680" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="output_final_decision" value="- final_decision.json" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="920" y="1710" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="output_summary" value="- evaluation_summary.json" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="920" y="1740" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_save_final_to_outputs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="save_final" target="final_outputs">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="1730" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow_save_supplemental_to_outputs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="save_final_supplemental" target="final_outputs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arrow_outputs_to_end" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="final_outputs" target="end_final">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile> 

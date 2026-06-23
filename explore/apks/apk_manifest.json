@@ -1,0 +1,78 @@
+{
+  "description": "APK本地缓存清单配置文件",
+  "version": "1.0.0",
+  "apps": {
+    "com.arduia.expense": {
+      "filename": "com.arduia.expense.apk",
+      "version": "1.0.0-beta05",
+      "source": "从设备导出 (2026-02-02 16:26)",
+      "notes": ""
+    },
+    "net.gsantner.markor": {
+      "filename": "net.gsantner.markor.apk",
+      "version": "2.10.9",
+      "source": "从设备导出 (2026-02-02 16:26)",
+      "notes": ""
+    },
+    "net.osmand": {
+      "filename": "net.osmand.apk",
+      "version": "4.6.13",
+      "source": "从设备导出 (2026-02-02 16:26)",
+      "notes": ""
+    },
+    "com.simplemobiletools.calendar.pro": {
+      "filename": "com.simplemobiletools.calendar.pro.apk",
+      "version": "6.22.2",
+      "source": "从设备导出 (2026-02-02 16:26)",
+      "notes": ""
+    },
+    "com.simplemobiletools.smsmessenger": {
+      "filename": "com.simplemobiletools.smsmessenger.apk",
+      "version": "5.19.3",
+      "source": "从设备导出 (2026-02-02 16:26)",
+      "notes": ""
+    },
+    "com.flauschcode.broccoli": {
+      "filename": "com.flauschcode.broccoli.apk",
+      "version": "1.2.6",
+      "source": "从设备导出 (2026-02-02 16:26)",
+      "notes": ""
+    },
+    "org.tasks": {
+      "filename": "org.tasks.apk",
+      "version": "13.6.3",
+      "source": "从设备导出 (2026-02-02 16:26)",
+      "notes": ""
+    },
+    "net.cozic.joplin": {
+      "filename": "net.cozic.joplin.apk",
+      "version": "3.0.1",
+      "source": "从设备导出 (2026-02-02 16:26)",
+      "notes": ""
+    },
+    "de.dennisguse.opentracks": {
+      "filename": "de.dennisguse.opentracks.apk",
+      "version": "v4.11.3",
+      "source": "从设备导出 (2026-02-02 16:26)",
+      "notes": ""
+    },
+    "com.simplemobiletools.gallery.pro": {
+      "filename": "com.simplemobiletools.gallery.pro.apk",
+      "version": "6.28.1",
+      "source": "从设备导出 (2026-02-02 16:26)",
+      "notes": ""
+    },
+    "code.name.monkey.retromusic": {
+      "filename": "code.name.monkey.retromusic.apk",
+      "version": "6.1.0",
+      "source": "从设备导出 (2026-02-02 16:26)",
+      "notes": ""
+    },
+    "org.videolan.vlc": {
+      "filename": "org.videolan.vlc.apk",
+      "version": "3.5.4",
+      "source": "从设备导出 (2026-02-02 16:26)",
+      "notes": ""
+    }
+  }
+}

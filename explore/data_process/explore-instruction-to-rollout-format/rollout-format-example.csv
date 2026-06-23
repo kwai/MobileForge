@@ -1,0 +1,50 @@
+task_identifier,task_description,task_app,golden_steps,task_difficulty
+001-CameraTakePhoto,Take one photo.,['Camera'],2,1
+002-CameraTakeVideo,Take one video.,['Camera'],3,2
+003-ClockTimerEntry,"Create a timer with 0 hours, 16 minutes, and 35 seconds. Do not start the timer.",['Clock'],3,1
+004-ContactsNewContactDraft,"Go to the new contact screen and enter the following details: First Name: Grace, Last Name: Taylor, Phone: 799-802-1530, Phone Label: Work. Do NOT hit save.",['Contacts'],6,1
+005-ExpenseAddMultiple,"Add the following expenses into the pro expense:
+Expense: Social Club Dues
+ amount_dollars: $67.41
+ category_name: Social
+ note: Monthly recurring
+
+Expense: Legal Fees
+ amount_dollars: $10.14
+ category_name: Others
+ note: Monthly recurring
+
+Expense: Stationery
+ amount_dollars: $118.93
+ category_name: Others
+ note: Remember to transfer funds
+",['Pro Expense'],20,2
+006-ExpenseAddSingle,"Add the following expenses into the pro expense:
+Expense: Therapy Sessions
+ amount_dollars: $307.01
+ category_name: Health Care
+ note: I may repeat this
+",['Pro Expense'],6,1
+007-MarkorCreateFolder,Create a new folder in Markor named folder_20250822_171357.,['Markor'],4,1
+008-MarkorCreateNoteAndSms,Create a new note in Markor named fair_ant_XOdi.txt with the following text: Actions speak louder than words.. Share the entire content of the note with the phone number +13192815309 via SMS using Simple SMS Messenger,['Markor'],9,3
+009-MarkorCreateNoteFromClipboard,Create a note in Markor named 2023_09_08_active_umbrella.txt. Perform a paste operation in the note and save the note.,['Markor'],7,2
+010-MarkorDeleteAllNotes,Delete all my notes in Markor.,['Markor'],7,1
+011-MarkorDeleteNewestNote,Delete the newest note in Markor.,['Markor'],4,1
+012-OsmAndFavorite,"Add a favorite location marker for 47.1303814, 9.5930117 in the OsmAnd maps app.",['OsmAnd'],6,2
+013-OsmAndMarker,"Add a location marker for Planken, Liechtenstein in the OsmAnd maps app.",['OsmAnd'],10,3
+014-OsmAndTrack,"Save a track with waypoints Schönberg, Liechtenstein, Triesen, Liechtenstein, Bendern, Liechtenstein in the OsmAnd maps app in the same order as listed.",['OsmAnd'],60,3
+015-SimpleCalendarAddOneEventInTwoWeeks,"In Simple Calendar Pro, create a calendar event in two weeks from today at 17h with the title 'Meeting with the Team' and the description 'We will prepare for annual budget.'. The event should last for 30 mins.",['Simple Calendar Pro'],10,2
+016-SimpleCalendarAddOneEventRelativeDay,"In Simple Calendar Pro, create a calendar event for this Thursday at 5h with the title 'Call with the Team' and the description 'We will celebrate team roles.'. The event should last for 60 mins.",['Simple Calendar Pro'],17,1
+017-SimpleCalendarAddOneEventTomorrow,"In Simple Calendar Pro, create a calendar event for tomorrow at 20h with the title 'Call with the Team' and the description 'We will prepare for team roles.'. The event should last for 30 mins.",['Simple Calendar Pro'],13,1
+018-SimpleCalendarAddRepeatingEvent,"In Simple Calendar Pro, create a recurring calendar event titled 'Review session for Budget Planning' starting on 2023-10-15 at 14h. The event recurs weekly, forever, and lasts for 60 minutes each occurrence. The event description should be 'We will understand business objectives. Remember to confirm attendance.'.",['Simple Calendar Pro'],14,1
+019-SimpleSmsSend,Send a text message using Simple SMS Messenger to +16597910719 with message: Beauty is in the eye of the beholder.,['Simple SMS Messenger'],6,2
+020-SimpleSmsSendClipboardContent,Send a message to +15459061746 with the clipboard content in Simple SMS Messenger,['Simple SMS Messenger'],6,1
+021-SystemBluetoothTurnOff,Turn bluetooth off.,['System'],2,1
+022-SystemBluetoothTurnOffVerify,Turn bluetooth off.,['System'],2,1
+023-SystemBluetoothTurnOn,Turn bluetooth on.,['System'],2,1
+024-SystemBluetoothTurnOnVerify,Turn bluetooth on.,['System'],2,1
+025-SystemBrightnessMax,Turn brightness to the max value.,['System'],3,1
+026-SystemBrightnessMaxVerify,Turn brightness to the max value.,['System'],2,1
+027-SystemBrightnessMin,Turn brightness to the min value.,['System'],3,1
+028-SystemCopyToClipboard,Copy the following text to the clipboard: Tracking #: 5K672F4C,['System'],2,1
+029-SystemWifiTurnOff,Turn wifi off.,['System'],3,1

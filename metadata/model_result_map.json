@@ -1,0 +1,97 @@
+{
+  "paper": {
+    "title": "MobileForge: Annotation-Free Adaptation for Mobile GUI Agents with Hierarchical Feedback-Guided Policy Optimization",
+    "arxiv": "https://arxiv.org/abs/2606.19930"
+  },
+  "models_collection": "https://huggingface.co/collections/lgy0404/mobileforge-models",
+  "experiments": [
+    {
+      "name": "gui-owl-base",
+      "checkpoint": "mPLUG/GUI-Owl-1.5-8B-Instruct",
+      "androidworld_session": "mobileforge-aw-26041102",
+      "androidworld": {
+        "pass_at_1": "65/116",
+        "pass_at_2": "79/116",
+        "pass_at_3": "80/116"
+      },
+      "mobileworld_session": "qwen3_vl_8b_26041604",
+      "mobileworld_sr": "44/117"
+    },
+    {
+      "name": "gui-owl-mobileforge-200tasks",
+      "checkpoint": "lgy0404/ForgeOwl-8B-200tasks",
+      "androidworld_session": "mobileforge-aw-26040801-check3",
+      "androidworld": {
+        "pass_at_1": "75/116",
+        "pass_at_2": "85/116",
+        "pass_at_3": "86/116"
+      }
+    },
+    {
+      "name": "gui-owl-mobileforge-400tasks",
+      "checkpoint": "lgy0404/ForgeOwl-8B-400tasks",
+      "androidworld_session": "mobileforge-aw-26051401",
+      "androidworld": {
+        "pass_at_1": "75/116",
+        "pass_at_2": "86/116",
+        "pass_at_3": "90/116"
+      }
+    },
+    {
+      "name": "gui-owl-mobileforge-900tasks",
+      "checkpoint": "lgy0404/ForgeOwl-8B",
+      "androidworld_session": "mobileforge-aw-26051501-check1",
+      "androidworld": {
+        "pass_at_1": "78/116",
+        "pass_at_2": "87/116",
+        "pass_at_3": "90/116"
+      },
+      "mobileworld_session": "qwen3_vl_8b_26042301",
+      "mobileworld_sr": "48/117"
+    },
+    {
+      "name": "qwen3-vl-base",
+      "checkpoint": "Qwen/Qwen3-VL-8B-Instruct",
+      "androidworld_session": "mobileforge-aw-26041101",
+      "androidworld": {
+        "pass_at_1": "47/116",
+        "pass_at_2": "57/116",
+        "pass_at_3": "64/116"
+      },
+      "mobileworld_session": "qwen3_vl_8b_26041602",
+      "mobileworld_sr": "9/117"
+    },
+    {
+      "name": "qwen3-vl-mobileforge-200tasks",
+      "checkpoint": "lgy0404/ForgeQwen3-8B-200tasks",
+      "androidworld_session": "mobileforge-aw-26041202",
+      "androidworld": {
+        "pass_at_1": "55/116",
+        "pass_at_2": "64/116",
+        "pass_at_3": "71/116"
+      }
+    },
+    {
+      "name": "qwen3-vl-mobileforge-400tasks",
+      "checkpoint": "lgy0404/ForgeQwen3-8B-400tasks",
+      "androidworld_session": "mobileforge-aw-26041201-check1",
+      "androidworld": {
+        "pass_at_1": "61/116",
+        "pass_at_2": "69/116",
+        "pass_at_3": "73/116"
+      }
+    },
+    {
+      "name": "qwen3-vl-mobileforge-900tasks",
+      "checkpoint": "lgy0404/ForgeQwen3-8B",
+      "androidworld_session": "mobileforge-aw-26041301",
+      "androidworld": {
+        "pass_at_1": "59/116",
+        "pass_at_2": "70/116",
+        "pass_at_3": "78/116"
+      },
+      "mobileworld_session": "qwen3_vl_8b_26041601",
+      "mobileworld_sr": "12/117"
+    }
+  ]
+}

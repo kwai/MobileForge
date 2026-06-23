@@ -1,0 +1,2 @@
+# 此文件确保 apks 目录被 git 跟踪
+# APK 文件本身会被 .gitignore 忽略

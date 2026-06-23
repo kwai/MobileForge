@@ -1,0 +1,12 @@
+# MobileForge AndroidWorld evaluation config.
+# Copy to config.yaml and fill your own OpenAI-compatible endpoint.
+
+QWEN_BASE_URL: "https://your-openai-compatible-endpoint/v1"
+QWEN_API_KEY: "YOUR_API_KEY"
+QWEN_MODEL: "Qwen/Qwen3-VL-8B-Instruct"
+QWEN_MAX_PIXELS: 1003520
+
+GUI_OWL_BASE_URL: "https://your-openai-compatible-endpoint/v1"
+GUI_OWL_API_KEY: "YOUR_API_KEY"
+GUI_OWL_MODEL: "mPLUG/GUI-Owl-1.5-8B-Instruct"
+GUI_OWL_LAST_IMAGE: 5

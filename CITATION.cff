@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+title: "MobileForge: Annotation-Free Adaptation for Mobile GUI Agents with Hierarchical Feedback-Guided Policy Optimization"
+message: "If you use MobileForge, please cite the arXiv paper."
+type: software
+authors:
+  - family-names: Liu
+    given-names: Guangyi
+  - family-names: Zhao
+    given-names: Pengxiang
+  - family-names: Wu
+    given-names: Gao
+  - family-names: Yin
+    given-names: Yiwen
+  - family-names: Li
+    given-names: Mading
+  - family-names: Liu
+    given-names: Liang
+  - family-names: Liu
+    given-names: Congxiao
+  - family-names: Qi
+    given-names: Zhang
+  - family-names: Wang
+    given-names: Mengyan
+  - family-names: Guo
+    given-names: Liang
+repository-code: "https://github.com/kwai/MobileForge"
+url: "https://arxiv.org/abs/2606.19930"
+date-released: "2026-06-22"
+preferred-citation:
+  type: article
+  title: "MobileForge: Annotation-Free Adaptation for Mobile GUI Agents with Hierarchical Feedback-Guided Policy Optimization"
+  authors:
+    - family-names: Liu
+      given-names: Guangyi
+    - family-names: Zhao
+      given-names: Pengxiang
+    - family-names: Wu
+      given-names: Gao
+  journal: "arXiv preprint arXiv:2606.19930"
+  year: 2026
