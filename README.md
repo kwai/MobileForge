@@ -6,6 +6,7 @@
 </h1>
 
 [![Project Page](https://img.shields.io/badge/🌐%20Project-Page-orange.svg)](https://mobile-forge.github.io/)
+[![Media 机器之心 (Synced China)](https://img.shields.io/badge/Media-%E6%9C%BA%E5%99%A8%E4%B9%8B%E5%BF%83%20(Synced%20China)-f5f5f5.svg?logo=wechat&logoColor=07C160&labelColor=ffffff)](https://mp.weixin.qq.com/s/la86XLaDIwOB2mHHbl0oDQ)
 [![arXiv](https://img.shields.io/badge/arXiv-2606.19930-b31b1b.svg)](https://arxiv.org/abs/2606.19930)
 [![HuggingFace Models](https://img.shields.io/badge/🤗%20HuggingFace-Models-purple.svg)](https://huggingface.co/collections/lgy0404/mobileforge-models)
 [![Datasets](https://img.shields.io/badge/🤗%20HuggingFace-Datasets-yellow.svg)](https://huggingface.co/collections/lgy0404/mobileforge-datasets)
@@ -18,6 +19,7 @@
 
 ## 🔥 News
 
+- **2026-07-09**: MobileForge was featured by 机器之心: [不用人工标注，GUI Agent跑起「数据飞轮」：快手、浙大开源MobileForge](https://mp.weixin.qq.com/s/la86XLaDIwOB2mHHbl0oDQ).
 - **2026-06-23**: Released the MobileForge [codebase](https://github.com/kwai/MobileForge), [🤗 datasets](https://huggingface.co/collections/lgy0404/mobileforge-datasets), and [🤗 benchmark results](https://huggingface.co/datasets/lgy0404/mobileforge-benchmark-results).
 - **2026-06-19**: MobileForge preprint is available on [arXiv](https://arxiv.org/abs/2606.19930).
 - **2026-06-10**: Released all MobileForge [🤗 model checkpoints](https://huggingface.co/collections/lgy0404/mobileforge-models).
