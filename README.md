@@ -105,16 +105,6 @@ The root README is intentionally concise. Detailed setup and commands live in th
 
 For questions about the paper, code, or released artifacts, contact [guangyiliu@zju.edu.cn](mailto:guangyiliu@zju.edu.cn).
 
-## ⭐ Star History
-
-<a href="https://www.star-history.com/#kwai/MobileForge&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kwai/MobileForge&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=kwai/MobileForge&type=Date" />
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=kwai/MobileForge&type=Date" />
-  </picture>
-</a>
-
 ## 🙏 Acknowledgements
 
 MobileForge builds on open-source resources including
